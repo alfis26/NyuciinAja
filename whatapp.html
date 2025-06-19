@@ -1,0 +1,112 @@
+
+<html>
+  <head>
+  </head>
+  <style>
+     body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center; /* Horizontal center */
+      align-items: center;     /* Vertical center */
+      font-family: Arial, sans-serif;
+      background-image: url('images/bglogin.jpg'); /* Ganti dengan path gambar kamu */
+        background-size: cover;                /* Menyesuaikan gambar dengan ukuran layar */
+        background-position: center;           /* Gambar berada di tengah */
+        background-repeat: no-repeat;          /* Gambar tidak diulang */
+        color: white;
+    }
+
+    .form-container {
+      background-color: rgba(0, 0, 0, 0.6); /* hitam transparan */
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      width: 500%;
+      max-width: 510px;
+      padding: 5px;
+      margin-bottom: 50px;
+    }
+    *{
+      font-family: Arial, sans-serif;
+    }
+    form{
+      margin: 15px 5px;
+      width: 500px;
+      font-size: 16px;
+    }
+    form h1{
+      text-align: center;
+    }
+    form label{
+      display: block;
+      margin-bottom: 5px;
+    }
+    form input, form textarea{
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    form button{
+      background: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      margin-top: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover{
+      background: green;
+    }
+    
+  </style>
+  <body>
+    <div class="form-container">
+    <form>
+      <h1>Pesan Melalui WhatsApp</h1>
+      <label for="">Nama lengkap</label>
+      <input type="text" class="name">
+
+      <label for="">Email</label>
+      <input type="text" class="email">
+
+      <label for="">Alamat</label>
+      <textarea class="Alamat"></textarea>
+      
+
+         <label for="">Jenis Layanan</label>
+      <input type="text" class="jenis_layanan" placeholder="Contoh layanan: Fast Clean / Deep Clean / Unyellowing">
+
+      <label for="">Message</label>
+      <textarea class="message"></textarea>
+      <button type="button" onclick="sendwhatsapp();">Send Via WhatsApp</button>
+    </form>
+
+    <script>
+      function sendwhatsapp(){
+       var phonenumber = "+6285701917804";
+
+       var name = document.querySelector(".name").value;
+       var email = document.querySelector(".email").value;
+       var country = document.querySelector(".alamat").value;
+       var jenis_layanan = document.querySelector(".jenis_layanan").value;
+       var message = document.querySelector(".message").value;
+
+       var url = "https://wa.me/085701917804" + phonenumber + "?text="
+       +"*Name :* "+name+"%0a"
+       +"*Email :* "+email+"%0a"
+       +"*Country:* "+country+"%0a"
+       +"*jenis_layanan :* "+jenis_layanan+"%0a"
+       +"*Message :* "+message
+       +"%0a%0a"
+       +"This is an example of send HTML form data to WhatsApp";
+
+       window.open(url, '_blank').focus();
+     }
+    </script>
+    </div>
+  </body>
+</html>
